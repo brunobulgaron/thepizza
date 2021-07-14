@@ -2,7 +2,7 @@ const products = [
   {
     _id: "1",
     name: "Muçarela",
-    image: "/images/muçarela.png",
+    image: "/images/mucarela.png",
     description: "Molho, muçarela, tomate em rodelas e orégano",
     category: "Traditional",
     price: "30,00",
@@ -47,7 +47,8 @@ const products = [
     _id: "5",
     name: "Escarola",
     image: "/images/escarola.png",
-    description: "Molho, chicória refogada com azeite de oliva e alho e muçarela",
+    description:
+      "Molho, chicória refogada com azeite de oliva e alho e muçarela",
     category: "Traditional",
     price: "35,00",
     countInStock: 7,
@@ -58,13 +59,14 @@ const products = [
     _id: "6",
     name: "Napolitana",
     image: "/images/napolitana.png",
-    description: "Molho, muçarela, tomates em rodelas, parmesão, azeitonas e orégano",
+    description:
+      "Molho, muçarela, tomates em rodelas, parmesão, azeitonas e orégano",
     category: "Special",
     price: "35,00",
     countInStock: 0,
     rating: 3.5,
     numReviews: 12,
   },
-]
+];
 
-export default products
+export default products;
