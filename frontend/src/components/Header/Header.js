@@ -7,12 +7,10 @@ const Header = () => {
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
-          <Navbar.Brand href="/" left>
-            ThePizza
-          </Navbar.Brand>
+          <Navbar.Brand href="/">ThePizza</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto" right>
+            <Nav className="ms-auto">
               <Nav.Link href="/cart">
                 <FaShoppingCart className="mx-2" />
                 Cart

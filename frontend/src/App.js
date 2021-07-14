@@ -1,5 +1,6 @@
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
+import Home from "./pages/Home/Home"
 import { Container } from "react-bootstrap"
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
       <Header />
       <Container>
         <main className="py-3">
-          <h1>Welcome to ThePizza!</h1>
+          <Home />
         </main>
       </Container>
       <Footer />
