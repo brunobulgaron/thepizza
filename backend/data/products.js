@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: "1",
     name: "Muçarela",
     image: "/images/mucarela.png",
     description: "Molho, muçarela, tomate em rodelas e orégano",
@@ -11,7 +10,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "2",
     name: "Calabresa",
     image: "/images/calabresa.png",
     description: "Molho, muçarela, calabresa, cebola fatiada e orégano",
@@ -22,7 +20,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: "3",
     name: "Margherita",
     image: "/images/margherita.png",
     description: "Molho, muçarela, tomates em rodelas e manjericão",
@@ -33,7 +30,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "4",
     name: "Frango c/ Catupiry",
     image: "/images/frango-catupiry.png",
     description: "Molho, muçarela, frango desfiado, catupiry e orégano",
@@ -44,7 +40,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "5",
     name: "Escarola",
     image: "/images/escarola.png",
     description:
@@ -56,7 +51,6 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: "6",
     name: "Napolitana",
     image: "/images/napolitana.png",
     description:
