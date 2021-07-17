@@ -21,8 +21,6 @@ const LoginPage = ({ history, location }) => {
     if (userInfo) {
       history.push(redirect)
     }
-
-    console.log("error:", error)
   }, [history, userInfo, redirect, error])
 
   const submitHandler = e => {
