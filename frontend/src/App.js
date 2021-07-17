@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home"
 import ProductPage from "./pages/ProductPage/ProductPage"
 import CartPage from "./pages/CartPage/CartPage"
 import LoginPage from "./pages/LoginPage/LoginPage"
+import RegisterPage from "./pages/RegisterPage/RegisterPage"
 import { Container } from "react-bootstrap"
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/cart/:id?" component={CartPage} />
           <Route path="/login" component={LoginPage} />
+          <Route path="/register" component={RegisterPage} />
         </Container>
       </main>
       <Footer />
