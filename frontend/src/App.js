@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage/LoginPage"
 import RegisterPage from "./pages/RegisterPage/RegisterPage"
 import ProfilePage from "./pages/ProfilePage/ProfilePage"
 import ShippingPage from "./pages/ShippingPage/ShippingPage"
+import PaymentPage from "./pages/PaymentPage/PaymentPage"
 import { Container } from "react-bootstrap"
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/register" component={RegisterPage} />
           <Route path="/profile" component={ProfilePage} />
           <Route path="/shipping" component={ShippingPage} />
+          <Route path="/payment" component={PaymentPage} />
         </Container>
       </main>
       <Footer />
