@@ -1,11 +1,13 @@
-import React, { useState } from "react"
+import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap"
 import Message from "../../components/Message/Message"
 import CheckoutSteps from "../../components/CheckoutSteps/CheckoutSteps"
+import { createOrder } from "../../actions/orderActions"
 
-const PlaceOrderPage = () => {
+const PlaceOrderPage = ({ history }) => {
+  const dispatch = useDispatch()
   const cart = useSelector(state => state.cart)
 
   // Calculate prices
@@ -13,7 +15,28 @@ const PlaceOrderPage = () => {
   cart.shippingPrice = cart.itemsPrice > 100 ? 0 : 100
   cart.totalPrice = Number(cart.itemsPrice) + Number(cart.shippingPrice)
 
-  const placeOrderHandler = () => {}
+  const orderCreate = useSelector(state => state.orderCreate)
+  const { order, success, error } = orderCreate
+
+  useEffect(() => {
+    if (success) {
+      history.push(`/order/${order._id}`)
+    }
+    // eslint-disable-next-line
+  }, [history, success])
+
+  const placeOrderHandler = () => {
+    dispatch(
+      createOrder({
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        shippingPrice: cart.shippingPrice,
+        totalPrice: cart.totalPrice,
+      }),
+    )
+  }
 
   return (
     <>
@@ -42,7 +65,7 @@ const PlaceOrderPage = () => {
                 <Message>Your cart is empty</Message>
               ) : (
                 <ListGroup variant="flush">
-                  {cart.cartItems.map((item, index) => (
+                  {cart.cartItems.map(item => (
                     <ListGroup.Item key={item.product}>
                       <Row>
                         <Col md={1}>
@@ -87,6 +110,13 @@ const PlaceOrderPage = () => {
                   <Col>R${cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
+
+              {error && (
+                <ListGroup.Item>
+                  <Message variant="danger">{error}</Message>
+                </ListGroup.Item>
+              )}
+
               <ListGroup.Item>
                 <Button type="button" className="btn-block" disabled={cart.cartItems === 0} onClick={placeOrderHandler}>
                   Place Order
